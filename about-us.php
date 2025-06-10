@@ -320,7 +320,7 @@ try {
 }
 ?>
 
-
+<section class="provide-2 py-100">
   <div class="bg-section">
     <div class="overlay overlay-2"></div>
   </div>
