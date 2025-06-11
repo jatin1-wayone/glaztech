@@ -139,7 +139,7 @@ $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                               <hr>
                               <h5 style="color: white;">“Where engineering meets elegance — tailored for luxury living.”</h5>
                                 <div class="top-handline"></div>
-                                <h5 class="handline" style="font-size: 35px;"><?php echo htmlspecialchars($slider['title']); ?></h5>
+                                <h5 class="handline" style="font-size: 35px; "><?php echo htmlspecialchars($slider['title']); ?></h5>
 
 
                                 <p class="about-website" ><?php echo htmlspecialchars($slider['description']); ?></p>
@@ -720,58 +720,61 @@ of mind.</p>
         </div> -->
       </div>
     </section>
-
-    <?php
-require_once('./admin/inc/db.php'); 
-try {
-    $stmt = $pdo->prepare("SELECT * FROM faqs  ORDER BY id DESC");
-    $stmt->execute();
-    $faqs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    die("Error fetching FAQs: " . $e->getMessage());
-}
-?>
-
-<section class="provide-2 py-100">
-  <div class="bg-section">
-    <div class="overlay overlay-2"></div>
-  </div>
+    <div class="container my-2">
+  <h4 class="text-white text-center py-3 px-2 rounded shadow-sm" style="background-color: #008aa1;">
+Inspired by you  Designed by Us  </h4>
+  
+</div>
+    <div class="contact-us py-100">
   <div class="container">
-    <div class="sec-title text-center mb-5">
-      <h1 class="text-white">Frequently Asked Questions</h1>
-      <p class="sec-explain">
-        Find answers to common questions about our services, products, and opportunities at Glaztech.
-      </p>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <!-- :: FAQs -->
-        <div class="faq">
-          <?php $i = 1; foreach ($faqs as $faq): ?>
-          <div class="faq-box">
-            <button
-              class="btn btn-primary click"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#faqs-<?= $i ?>"
-              aria-expanded="<?= $i === 1 ? 'true' : 'false' ?>"
-              aria-controls="faqs-<?= $i ?>"
-            >
-              <?= htmlspecialchars($faq['question']) ?>
-              <i class="fas fa-angle-right"></i>
-            </button>
-            <div class="collapse <?= $i === 1 ? 'show' : '' ?>" id="faqs-<?= $i ?>">
-              <div class="card card-body about-text">
-                <?= nl2br(htmlspecialchars($faq['answer'])) ?>
-              </div>
-            </div>
-          </div>
-          <?php $i++; endforeach; ?>
+    <div class="row g-4 text-center">
+
+      <!-- Project 1 -->
+      <div class="col-md-4">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm mb-3">
+          <img src=".\assets\images\product1\P20220087 House PG _ RCN Minimalist Windows (47).jpg" alt="" class="img-fluid w-100 project-img rounded-top">
+        </div>
+        <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-start">
+          <h5 class="fw-bold mb-3 text-center">01</h5>
+          
+
+         
         </div>
       </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-4">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm mb-3">
+          <img src=".\assets\images\product1\P20220087 House PG _ RCN Minimalist Windows (49).jpg"alt="Bi-Folding" class="img-fluid w-100 project-img rounded-top" 
+>
+        </div>
+        <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-start">
+          <h5 class="fw-bold btn-secondry mb-3 text-center">02</h5>
+         
+          <!-- <div class="text-center btn-box">
+            <a href="https://demo.wayone.co.in/glaz/category.php?category=bi-folding" class=" btn-1 "><span>View-More</span></a>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-4">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm mb-3">
+          <img src=".\assets\images\product1\shower-enclosures -bmp-2.bmp" alt="Demountable Glass Partitions" class="img-fluid w-100 project-img rounded-top">
+        </div>
+        <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-start">
+          <h5 class="fw-bold mb-3 text-center">03</h5>
+          
+          <!-- <div class="text-center btn-box">
+            <a href="https://demo.wayone.co.in/glaz/category.php?category=demountable-glass-partitioins" class=" btn-1 "><span>View More</span></a>
+          </div> -->
+        </div>
+      </div>
+
     </div>
   </div>
-</section>
+</div>
+    
 
    
 
@@ -783,6 +786,9 @@ try {
             <div class="col-lg-5">
               <h2>We work with global Industries!</h2>
               <h3>Glaztech Completed  Project</h3>
+              <h6>
+              Every project is ajourney— shaped byimagination, engineered by expertise.”
+              </h6>
             </div>
             <div class="col-lg-5 d-flex align-items-center">
               <p class="sec-explain">
