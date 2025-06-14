@@ -125,7 +125,13 @@ $stmt = $pdo->prepare("SELECT * FROM slider");
 $stmt->execute();
 $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
+<style>
+  @media (max-width: 768px) {
+  .sec-hero {
+    height: 80vh;
+  }
+}
+</style>
 <section class="header" id="page">
     <div class="header-carousel owl-carousel owl-theme">
         <?php foreach ($sliders as $slider): ?>
@@ -137,7 +143,7 @@ $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="col-lg-8">
                             <div class="banner">
                               <hr>
-                              <h5 style="color: white;">“Where engineering meets elegance — tailored for luxury living.”</h5>
+                              <h5 style="color: white;"><?php echo htmlspecialchars($slider['short_desc']); ?></h5>
                                 <div class="top-handline"></div>
                                 <h5 class="handline" style="font-size: 35px; "><?php echo htmlspecialchars($slider['title']); ?></h5>
 
@@ -242,6 +248,10 @@ $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
     height: 300px;
   transition: transform 0.4s ease;
 }
+.project-imge {
+    height: 250px;
+  transition: transform 0.4s ease;
+}
 .project-box:hover .project-img {
   transform: scale(1.05);
 }
@@ -304,24 +314,36 @@ $Abouts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php echo htmlspecialchars($about['description']); ?>
                 </p>
               </div>
+
+
+
+              
               <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-39">
                   <p class="providing">
-                    Providing innovative glass door Solution For Future
+Engineered for Excellence. Designed for You.
                   </p>
                   <ul class="about-us-core-list">
                     <li class="item">
                       <i class="fas fa-check"></i>
-                      <h4>We Use Qulity Manufacturing Materials</h4>
+                      <h4>Over 20 years of industry experience</h4>
                     </li>
                     
                     <li class="item">
                       <i class="fas fa-check"></i>
-                      <h4>Group Of Certified & Experienced Team</h4>
+                      <h4>Projects across UAE, GCC, and Africa Collaboration  with  Europe’s best:
+                      </h4>
+                    </li>
+                   
+                    <li class="item">
+                      <i class="fas fa-check"></i>
+                       <h4>Airclos(Spain),GU(Germany),Amuller(Germany),20Milimetros (Portugal) </h4>
                     </li>
                     <li class="item">
                       <i class="fas fa-check"></i>
-                      <h4>The Best services of Multiple Industries</h4>
+                      <h4> From consultation to after-sales service, we deliver seamless experiences
+
+                      </h4>
                     </li>
                   </ul>
                   <!-- <div class="img-person">
@@ -347,7 +369,14 @@ $Abouts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- :: Services -->
     
 
+<style>
+  @media (max-width: 576px) {
+  .about-us-core-list .item h4 {
+    font-size: 1rem;
+  }
+}
 
+</style>
 <!-- :: Vision, Mission, Value Section -->
 <section class="vision-mission-value  mt-5" >
   <div class="container mt-5">
@@ -356,17 +385,9 @@ $Abouts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="card h-100 border-0 shadow-sm">
           <div class="card-body text-center">
             <i class="fas fa-eye fa-2x mb-3 text-primary"></i>
-            <h3 class="card-title" >VISION</h3>
+            <h2 class="card-title" >Our Vision </h2>
             <p class="card-text" style="text-align: left; line-height: -1;">
-            To be the leading name in architectural
-glass and aluminum systems, setting
-new benchmarks in design,
-performance, and sustainability. At
-Glaztech, our vision is to connect people
-with the outdoors through smartly
-engineered, elegant, and eco-conscious
-solutions that inspire luxury and
-enhance lifestyle.
+            To be the UAE’s most trusted provider of custom aluminum and glass systems, shaping tomorrow’s architecture with sustainable, stylish, and intelligent designs.
             </p>
           </div>
         </div>
@@ -375,25 +396,9 @@ enhance lifestyle.
         <div class="card h-100 border-0 shadow-sm">
           <div class="card-body text-center">
             <i class="fas fa-bullseye fa-2x mb-3 text-primary"></i>
-            <h3 class="card-title">MISSION</h3>
+            <h2 class="card-title">Our Mission </h2>
             <p class="card-text" style="text-align: left; line-height: -1;">
-            To deliver premium, tailor-made
-glass and aluminum systems that
-fuse engineering precision, aesthetic
-elegance, and advanced European
-technology including cutting-edge
-motorization, automation, and
-intelligent controls.
-We specialize in transforming
-complex architectural ideas into
-practical, high-performance
-solutions empowering architects,
-developers, and homeowners to
-redefine modern living. Every
-Glaztech system is crafted with
-European engineering expertise,
-ensuring lasting durability, seamless
-functionality, and refined design.            </p>
+            To deliver high-end, tailor-made systems that blend architectural beauty with smart engineering — empowering homeowners, architects, and developers to realize bold designs with confidence.        </p>
           </div>
         </div>
       </div>
@@ -401,35 +406,35 @@ functionality, and refined design.            </p>
         <div class="card h-100 border-0 shadow-sm">
           <div class="card-body text-center">
             <i class="fas fa-gem fa-2x mb-3 text-primary"></i>
-            <h3 class="card-title">VALUE</h3>
+            <h2 class="card-title">Our Values </h2>
             <div class="card-text" style="text-align: left; line-height: -1;">
-  <h6>Client-Centric Innovation</h6>
-  <p>
-    Every project starts with a vision we listen, 
-    innovate, and deliver beyond expectations.
-  </p>
-  <h6>Transparency & Trust 
-  </h6>
-  <p>Clear communication, honest timelines, and 
-service with integrity are at the heart of our 
-operations. </p>
-<h6>Craftsmanship Meets Customization 
-</h6>
-<p>We believe in solutions and quality. Every 
-system is thoughtfully designed and tailored 
-to your unique space.</p>
-<h6>Team Synergy 
-</h6>
-<p>We work as one  from our engineering team 
-to our international partners  your success is 
-our shared mission. 
-Reliable After-Sales Support 
-Our commitment doesn’t end at installation. 
-We offer trusted warranty coverage and 
-responsive after-sales service for your peace 
-of mind.</p>
-</div>
+                  <h6> Client-Centric Innovation </h6>
+                  <p>
+                  We design with your ideas in mind.
+                  </p>
+                  <h6>  Engineered Excellence  
+                  </h6>
+                  <p>COnly premium materials and suppliers. </p>
+                <h6>Transparency & Trust
+                </h6>
+                <p>No surprises, only results.</p>
+                <h6>Craftsmanship Meets Customization
+                </h6>
+                <p>Each project is unique.</p>
+                <h6>After-Sales Commitment </h6>
+                <p>Warranty and service you can rely on
+                </p>
+                </div>
+<style>
+  ul {
+  margin: 0;
+}
 
+li {
+  margin-bottom: 0.1rem; /* Optional spacing between items */
+}
+
+</style>
 
         </div>
       </div>
@@ -447,6 +452,56 @@ of mind.</p>
             </a>
           </div>
         </div>
+        <section class="py-5 bg-light" id="offerings">
+  <div class="container">
+    <div class="row align-items-center flex-column-reverse flex-md-row">
+      
+      <!-- Left: Text Content -->
+      <div class="col-md-7">
+        <h2 class="fw-bold text-dark mb-2">What We Offer</h2>
+        <h5 class="text-muted mb-3">Smart Solutions for Modern Spaces</h5>
+        <p class="text-dark">
+          Explore our range of cutting-edge products engineered for elegance, durability, and thermal performance:
+        </p>
+        <ul class="list-unstyled  ps-0 text-secondary  " style="font-size: 18px; color:#0dcaf0;">
+          <li class="mb-2">
+            <i class="fas fa-check text-primary me-2"></i> Frameless Sliding Systems – Maximize light and views
+          </li>
+          <li class="mb-2 item ">
+            <i class="fas fa-check text-primary me-2"></i> Thermal Bifold Doors – Minimal profile, superior insulation
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-primary me-2"></i> Retractable Roofs – All-weather usability with European tech
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-primary me-2"></i> Smoke & Natural Ventilation Systems – German precision for safety and comfort
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-primary me-2"></i> Movable Walls – Flexible space separation with acoustic control
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-primary me-2"></i> Office Glass Partitions – Sleek, quiet, and fully customizable
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-primary me-2"></i> Automatic Doors & Staircase Glazing – Smart access with aesthetic appeal
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-check text-primary me-2"></i> Handrails & Shower Cubicles – Engineered to enhance modern living
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: Image (shown after on mobile, but visually on right on desktop) -->
+      <div class="col-md-5 mb-4 mb-md-0">
+        <div class="rounded shadow-sm overflow-hidden" style="height: 100%; max-height: 550px;">
+          <img src="./assets/images/product2/jatin.jpeg" alt="Smart Solutions" class="img-fluid w-100 h-100 object-fit-cover">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- Lity CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" rel="stylesheet" />
@@ -462,321 +517,200 @@ of mind.</p>
     </section>
 
    
-    <!-- :: Team -->
-   
-     <!-- :: Statistic -->
-     <div class="statistic">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-lg-3">
-            <div class="statistic-item">
-              <i class="ar-icons-checklist"></i>
-              <div class="content">
-                <div class="counter statistic-counter">7.165</div>
-                <div class="counter-name">
-                  Projects And Residentials Completed in 2020
-                </div>
-              </div>
-            </div>
+    <div class="container">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\brands\smoke01.jpeg" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Smoke Ventilation</h5>
           </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="statistic-item">
-              <i class="ar-icons-conveyor-2"></i>
-              <div class="content">
-                <div class="counter statistic-counter">3.422</div>
-                <div class="counter-name">
-                  Satisfied Clients We Have Served Globally
-                </div>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\product2\Accousticmovie.jpeg" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Accoustic movie</h5>
           </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="statistic-item">
-              <i class="ar-icons-conveyor-3"></i>
-              <div class="content">
-                <div class="counter statistic-counter">1.888</div>
-                <div class="counter-name">
-                  Qualified Employees And Workers With Us
-                </div>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\projects\dubai02.jpeg" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Smoke Ventilation 
+
+            </h5>
           </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="statistic-item">
-              <i class="ar-icons-idea"></i>
-              <div class="content">
-                <div class="counter statistic-counter">45</div>
-                <div class="counter-name">
-                  Years Of Experience In The Factory and Manufacturing
-                </div>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\product2\NPj_7KTgAluminium @ Glass Works.jpeg" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Smoke extraction systems</h5>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\projects\dubai.jpeg" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Smoke Ventilation Dubai Airport
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\projects\dubai01.jpeg" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">rectractable roof
+            </h5>
           </div>
         </div>
       </div>
     </div>
-
-    
-
-    <!-- :: Provide -->
-    <section class="provide">
-      <div class="bg-section">
-        <div class="overlay overlay-3"></div>
-      </div>
-      <div class="container">
-        <div class="sec-title">
-          <div class="row">
-            <div class="col-lg-5">
-              <h3>Glaztech Provide The Best Service For Sustainable Progress</h3>
-            </div>
-            <div class="col-lg-5 d-flex align-items-center">
-              <p class="sec-explain">
-                Glaztech Are A Industry & Manufacturing Services Provider
-                Institutions. Suitable For Factory, Manufacturing, Industry,
-                Engineering, Construction And Any Related Industry Care Field.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="provide-core-list">
-          <div class="row">
-            <div class="col-md-6 col-lg-3">
-              <div class="provide-core-list-item">
-                <i class="ar-icons-idea"></i>
-                <h4>45 Years Experience</h4>
-                <p>
-                  Lorem Ipsum is simply text of the printing and typesetting
-                  industry.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="provide-core-list-item">
-                <i class="ar-icons-foreman"></i>
-                <h4>Best Team Member</h4>
-                <p>
-                  Lorem Ipsum is simply text of the printing and typesetting
-                  industry.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="provide-core-list-item">
-                <i class="ar-icons-electricity"></i>
-                <h4>The Best Services</h4>
-                <p>
-                  Lorem Ipsum is simply text of the printing and typesetting
-                  industry.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="provide-core-list-item">
-                <i class="ar-icons-forklift"></i>
-                <h4>Unique Technology</h4>
-                <p>
-                  Lorem Ipsum is simply text of the printing and typesetting
-                  industry.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- :: Qoute Box -->
-        <!-- <div class="quote-box">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="sec-title">
-                <h3>Get Every Updates!</h3>
-                <p class="sec-explain">
-                  Glaztech Are A Industry & Manufacturing Services Provider
-                  Institutions. Suitable For Factory, Manufacturing, Industry,
-                  Engineering, Construction And Any Related Industry Care Field.
-                </p>
-              </div>
-              <div class="contact-info">
-                <h4>Do You Have Any Questions!</h4>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="contact-box">
-                      <i class="ar-icons-call"></i>
-                      <div class="box">
-                        <a class="phone" href="tel:0201212843661"
-                          >0121284 3661</a
-                        >
-                        <a class="phone" href="tel:0201029134630"
-                          >0102913 4630</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="contact-box">
-                      <i class="ar-icons-email"></i>
-                      <div class="box">
-                        <a class="mail" href="mailto:mailbox@ar-coder.com"
-                          >MailBox@AR-Coder.com</a
-                        >
-                        <a class="mail" href="mailto:support@Glaztech.com"
-                          >Support@Glaztech.com</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="contact-box last">
-                      <i class="ar-icons-location"></i>
-                      <div class="box">
-                        <p>14D Street Brooklyn,</p>
-                        <p>New York.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <form class="row form-contact">
-                <div class="col-lg-6">
-                  <div class="quote-item">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Name"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="quote-item">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="quote-item">
-                    <select name="industry">
-                      <option value="Select your industry">
-                        Select your industry
-                      </option>
-                      <option value="Constraction Of Engineering">
-                        Constraction Of Engineering
-                      </option>
-                      <option value="Petroleum Gas Energy">
-                        Petroleum & Gas Energy
-                      </option>
-                      <option value="Basic Industrial Chemicals">
-                        Basic & Industrial Chemicals
-                      </option>
-                      <option value="Mechanical Engineering">
-                        Mechanical Engineering
-                      </option>
-                      <option value="Bridge Constraction">
-                        Bridge Constraction
-                      </option>
-                      <option value="Automotive Manufacturing">
-                        Automotive Manufacturing
-                      </option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="quote-item">
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="quote-item">
-                    <div class="quote-item">
-                      <textarea
-                        name="message"
-                        placeholder="Message Details!"
-                        required
-                      ></textarea>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="quote-item">
-                    <button class="btn-1 btn-3 submit" type="submit">
-                      <span>Submit Request</span>
-                    </button>
-                    <span class="out-message"></span>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div> -->
-      </div>
-    </section>
-    <div class="container my-2">
-  <h4 class="text-white text-center py-3 px-2 rounded shadow-sm" style="background-color: #008aa1;">
-Inspired by you  Designed by Us  </h4>
-  
-</div>
-    <div class="contact-us py-100">
-  <div class="container">
-    <div class="row g-4 text-center">
-
-      <!-- Project 1 -->
-      <div class="col-md-4">
-        <div class="project-box position-relative overflow-hidden rounded shadow-sm mb-3">
-          <img src=".\assets\images\product1\P20220087 House PG _ RCN Minimalist Windows (47).jpg" alt="" class="img-fluid w-100 project-img rounded-top">
-        </div>
-        <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-start">
-          <h5 class="fw-bold mb-3 text-center">01</h5>
-          
-
-         
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="col-md-4">
-        <div class="project-box position-relative overflow-hidden rounded shadow-sm mb-3">
-          <img src=".\assets\images\product1\P20220087 House PG _ RCN Minimalist Windows (49).jpg"alt="Bi-Folding" class="img-fluid w-100 project-img rounded-top" 
->
-        </div>
-        <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-start">
-          <h5 class="fw-bold btn-secondry mb-3 text-center">02</h5>
-         
-          <!-- <div class="text-center btn-box">
-            <a href="https://demo.wayone.co.in/glaz/category.php?category=bi-folding" class=" btn-1 "><span>View-More</span></a>
-          </div> -->
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="col-md-4">
-        <div class="project-box position-relative overflow-hidden rounded shadow-sm mb-3">
-          <img src=".\assets\images\product1\shower-enclosures -bmp-2.bmp" alt="Demountable Glass Partitions" class="img-fluid w-100 project-img rounded-top">
-        </div>
-        <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-start">
-          <h5 class="fw-bold mb-3 text-center">03</h5>
-          
-          <!-- <div class="text-center btn-box">
-            <a href="https://demo.wayone.co.in/glaz/category.php?category=demountable-glass-partitioins" class=" btn-1 "><span>View More</span></a>
-          </div> -->
-        </div>
-      </div>
-
-    </div>
+    <!-- Pagination and navigation -->
+    <!-- <div class="swiper-pagination"></div> -->
+    <!--<div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div> -->
   </div>
 </div>
-    
 
-   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <div class="container my-4">
+    <div class="text-center py-5">
+    <h4 class="mb-3" style="font-size: 1.5rem; color:#00a8c0; ">
+      Engineered for Excellence. Designed for You.
+    </h4>
+    <p class="mb-0 w-1/2" style="font-size: 1.1rem;line-height: 1.5rem;width: 66%;margin: auto;">
+      We specialize in custom-made, high-performance glass and aluminum systems—crafted to suit the harsh Middle East climate and the evolving needs of modern villas and commercial buildings.
+    </p>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src="./assets/images/product2/bifolding01.jpeg" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Bi-Folding Doors</h5>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\product2\Accousticmovie.jpeg" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Accoustic movie</h5>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\product2\NPj_7KTgAluminium @ Glass Works.jpeg" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Aluminium @ Glass Works
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\product2\ooo.png" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Vertical sliding</h5>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\product2\111.png" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Handrails</h5>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="project-box position-relative overflow-hidden rounded shadow-sm">
+          <img src=".\assets\images\product1\demountable-glass-wall-partition-automatic-in-dubai-14.jpg" class="img-fluid w-100 project-imge rounded-top" alt="Bi-Folding Doors">
+          <div class="product-description p-3 shadow-sm bg-white rounded-bottom text-center">
+            <h5 class="fw-bold mb-0">Shower Encloser</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pagination and navigation -->
+    <!-- <div class="swiper-pagination"></div> -->
+    <!--<div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div> -->
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 1000, // 3 seconds delay between slides
+    disableOnInteraction: false, // keeps autoplay running after user interaction
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    576: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    992: {
+      slidesPerView: 3,
+    },
+  }
+});
+
+</script>
+<!-- Add this in your <head> if not already present -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Responsive Section -->
+<div class="container my-4">
+  <div class="text-center">
+  <div class="container my-2">
+  <h4 class="text-white text-center py-3 px-2 rounded shadow-sm" style="background-color: #008aa1;">
+  Your Vision Our Intelligence
+  </h4>
+</div>
+    
+    <img 
+      src="./assets/images/product2/Airclos S200 Bifold doors (17).jpg" 
+      alt="Vision Image" 
+      class="img-fluid rounded shadow-sm" 
+      style="max-height: 400px; object-fit: cover; width: 100%;"
+    >
+  </div>
+</div>
+
 
     <!-- :: Projects -->
     <section class="projects py-100">
@@ -953,85 +887,120 @@ $projectName = htmlspecialchars($row['project_name']); // Prevent XSS
     <!-- :: Provide 2 -->
     
 
-  
 
-    
-    <div class="section-full  mobile-page-padding bg-gray  p-t80 p-b10 bg-repeat" style="background-image:url(images/background/bg-12.jpg);">
-        
-        <div class="container">
-        
-            <!-- TITLE START -->
-            <div class="section-head">
-                <div class="sx-separator-outer separator-center">
-                    <div class="sx-separator bg-white bg-moving bg-repeat-x" style="background-image:url(images/background/cross-line2.png)">
-                        <h3 class="sep-line-one">Our Brands</h3>
-                    </div>
-                </div>
-            </div>                   
-            <!-- TITLE END -->                 
-            <div class="section-content">
-                <div class="client-grid m-b40">
-                
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 m-b30">
-                            <div class="card">
-                           <center> <img src="./assets/images/brands/aluminium-and-glass-system-manufacturers-and-suppliers-in-dubai-28.png" alt="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech" title="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech" ></center>
-                            
-                        </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 m-b30">
-                            <div class="card">
-                          <center>  <img src="./assets/images/brands/airclos.png" alt="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech" title="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech" > </center>
-                            
-                        </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6  m-b30">
-                           <div class="card">
-                            <center> <img src="./assets/images/brands/aluminium-and-glass-system-manufacturers-and-suppliers-in-dubai-30.png" alt="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech" title="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech" ></center>
-                            
-                        </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6  m-b30">
-                           <div class="card"> 
-                            <center> <img src="./assets/images/brands/aluminium-and-glass-system-manufacturers-and-suppliers-in-dubai-31.png" alt="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech" title="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech" > </center>
-                            
-                        </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6  m-b30">
-                            <div class="card">
-                           <center> <img src="./assets/images/brands/aluminium-and-glass-system-manufacturers-and-suppliers-in-dubai-32.png" alt="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech" title="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech"></center>
-                           
-                           
 
-                        </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6  m-b30">
-                          <div class="card">
-                            <center>  <img src="./assets/images/brands/aluminium-and-glass-system-manufacturers-and-suppliers-in-dubai-33.png" alt="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech" title="Aluminium & Glass System Manufacturers and Suppliers in Dubai - GlazTech"></center>
-                           
-                            
+   <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-                        </div>
-                        </div>
-                    </div>
-
-                                                                           
-                </div>
-            </div>
+<div class="section-full mobile-page-padding bg-gray pt-5 pb-2 bg-repeat" style="background-image:url('images/background/bg-12.jpg');">
+  <div class="container" style="margin-bottom: 30px;">
+    <!-- Title -->
+    <div class="section-head text-center mb-3">
+      <div class="sx-separator-outer separator-center">
+        <div class="sx-separator bg-white bg-moving bg-repeat-x" style="background-image:url('images/background/cross-line2.png')">
+          <h3 class="sep-line-one">Our Brands</h3>
         </div>
-        
-        <div class="hilite-title text-left p-l00 text-uppercase">
-            <strong>Brands</strong>
-        </div>                     
-     </div>  
+      </div>
+    </div>
+
+    <!-- Brands Swiper -->
+    <div class="swiper myBrandSwiper">
+      <div class="swiper-wrapper">
+        <!-- Each brand wrapped in swiper-slide -->
+        <div class="swiper-slide">
+          <div class="brand-card">
+            <img src="./assets/images/brands/aluminium-and-glass-system-manufacturers-and-suppliers-in-dubai-28.png" alt="Brand 1">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="brand-card">
+            <img src="./assets/images/brands/airclos.png" alt="Brand 2">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="brand-card">
+            <img src="./assets/images/brands/aluminium-and-glass-system-manufacturers-and-suppliers-in-dubai-30.png" alt="Brand 3">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="brand-card">
+            <img src="./assets/images/brands/aluminium-and-glass-system-manufacturers-and-suppliers-in-dubai-31.png" alt="Brand 4">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="brand-card">
+            <img src="./assets/images/brands/aluminium-and-glass-system-manufacturers-and-suppliers-in-dubai-32.png" alt="Brand 5">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="brand-card">
+            <img src="./assets/images/brands/aluminium-and-glass-system-manufacturers-and-suppliers-in-dubai-33.png" alt="Brand 6">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keep your styling -->
+  <style>
+    .brand-card {
+      padding: 10px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 0 10px #00000011;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 150px;
+    }
+
+    .brand-card img {
+      max-height: 120px;
+      object-fit: contain;
+      width: auto;
+      margin: auto;
+    }
+
+    @media (max-width: 556px) {
+      .brand-card img {
+        max-height: 90px;
+      }
+    }
+  </style>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Swiper Initialization -->
+<script>
+  new Swiper(".myBrandSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    speed: 800,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      576: { slidesPerView: 2 },
+      992: { slidesPerView: 3 }
+    }
+  });
+</script>
 
 
-<!-- Style -->
 
 
 
-    <!-- :: Footer -->
-    <?php include 'footer.php';?>
+
+    <?php include 'footer.php'; ?>
+
+
+
 
     <!-- :: Scroll UP -->
     <div class="scroll-up">
@@ -1039,6 +1008,7 @@ $projectName = htmlspecialchars($row['project_name']); // Prevent XSS
         <i class="fas fa-long-arrow-alt-up"></i>
       </a>
     </div>
+
 <script  src="assets/js/popper.min.js"></script><!-- POPPER.MIN JS -->
 <script  src="assets/js/bootstrap.min.js"></script><!-- BOOTSTRAP.MIN JS -->
 <script  src="assets/js/bootstrap-select.min.js"></script><!-- Form js -->
@@ -1087,6 +1057,7 @@ $projectName = htmlspecialchars($row['project_name']); // Prevent XSS
     <!-- :: Main JS -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/ajax-script.js"></script>
+
   </body>
 
 </html>
